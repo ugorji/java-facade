@@ -1,0 +1,73 @@
+/**
+ * Auto generated file - generated from Oxygen Facade Creator &copy; oxygensoftwarelibrary.com
+ */
+
+<#if (model.getPackage()?exists) && model.getPackage()?trim != "" >
+package ${model.package};
+</#if>
+
+import net.ugorji.oxygen.tool.facade.FacadeContext;
+import net.ugorji.oxygen.tool.facade.FacadeSession;
+import net.ugorji.oxygen.tool.facade.trees.TreeUtils;
+
+import java.util.Map;
+import java.util.Properties;
+
+public class ${model.className}Session extends FacadeSession {
+
+  protected Properties parameters;
+  protected Properties categoryMappings;
+  protected FacadeContext ctx;
+  
+  public ${model.className}Session () throws Exception {
+      initXX( "${model.definitionresource}" , 
+             "${model.helpresource}" );
+  }
+
+  private void initXX(String _definitionResource, String _helpResource) throws Exception {
+    ctx = new FacadeContext(_definitionResource, _helpResource);
+    parameters = new Properties();
+    categoryMappings = new Properties();
+<#assign keys = model.parameters?keys>
+<#list keys as key>
+    //System.out.println("${model.parameters[key]}" );
+    parameters.setProperty("${key}", "${model.parameters[key]}" );
+</#list>
+
+<#assign keys = model.categoryMapping?keys>
+<#list keys as key>
+    categoryMappings.setProperty("${key}", "${model.categoryMapping[key]}" ); 
+</#list>
+    TreeUtils.initTrees(ctx);
+  }
+  
+<#list model.getTemplateElements() as key>
+  public  ${key.returnObject} ${key.methodName} ( ${key.parametersSignature} ) throws Exception { // ${key.exceptionPhrase} {
+    ${key.className} obj1 = new ${key.className} ();
+    try {
+      obj1.init(ctx);
+<#if key.getReturnObject() == "void" >
+      obj1.execute( ${key.parametersCall} );
+<#else>
+      ${key.returnObject} myrtnval = obj1.execute( ${key.parametersCall} );
+      ctx.handleReturnValue(myrtnval);
+      return myrtnval;
+</#if>
+    } catch(Throwable thr) {
+      ctx.handleThrowable(thr);
+<#if key.getReturnObject() != "void" >
+      return null;
+</#if>
+    } finally {
+      obj1.close();
+    }
+  }
+
+</#list>
+
+  public FacadeContext getCtx() {
+    return ctx;
+  }
+
+}
+

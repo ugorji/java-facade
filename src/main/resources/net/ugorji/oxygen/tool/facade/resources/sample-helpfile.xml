@@ -1,0 +1,55 @@
+<application>
+
+<help command="sample" summary="Just some sample stuff" >
+Sample sample sample 
+Just some sample stuff
+Sample sample sample 
+Just some sample stuff
+Sample sample sample 
+Sample sample sample 
+Sample sample sample 
+Just some sample stuff
+</help>
+
+<help command="quickhelp" summary="Shows quick help and the corresponding categories" >
+quickhelp quickhelp quickhelp quickhelp 
+Shows quick help and the corresponding categories
+quickhelp quickhelp quickhelp quickhelp 
+Shows quick help and the corresponding categories
+</help>
+
+<help command="help" summary="shows detailed help about a command" >
+shows detailed help about a command
+== -0 == 0 == -0 == -0= = ===
+shows detailed help about a command
+</help>
+
+<help command="commandcategories" summary="shows all command categories" >
+shows all command categories
+shows all command categories
+shows all command categories
+</help>
+
+<help command="commands" summary="shows all available commands" >
+shows all available commands
+shows all available commands
+shows all available commands
+shows all available commands
+</help>
+
+<help command="setvars" summary="used to set some vars" >
+used to set some vars
+used to set some vars
+used to set some vars
+used to set some vars
+</help>
+
+<help command="unsetvars" summary="used to unset some vars" >
+used to unset some vars
+used to unset some vars
+used to unset some vars
+used to unset some vars
+</help>
+
+</application>
+

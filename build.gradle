@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile project(':java-common')
+
+    implementation 'org.freemarker:freemarker:2.3.28'
+}

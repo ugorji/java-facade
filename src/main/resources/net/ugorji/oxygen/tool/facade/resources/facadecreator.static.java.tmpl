@@ -1,0 +1,48 @@
+/**
+ * Auto generated file - generated from Oxygen Facade Creator &copy; oxygensoftwarelibrary.com
+ * Note: Methods with names starting with oxy are restricted.
+ */
+
+<#if (model.getPackage()?exists) && model.getPackage()?trim != "" >
+package ${model.package};
+</#if>
+
+import net.ugorji.oxygen.tool.facade.FacadeContext;
+import net.ugorji.oxygen.tool.facade.FacadeSession;
+
+import java.util.Map;
+import java.util.Properties;
+
+public class ${model.className} {
+  static {
+    try {
+      if(getDefaultSession() == null) {
+        setDefaultSession(new ${model.className}Session());
+      }
+    } catch(RuntimeException re) {
+      throw re;
+    } catch(Throwable thr) {
+      throw new RuntimeException(thr);
+    }
+  }
+
+<#list model.getTemplateElements() as key>
+  public static ${key.returnObject} ${key.methodName} ( ${key.parametersSignature} ) throws Exception { // ${key.exceptionPhrase} {
+    <#if key.getReturnObject() != "void" >return</#if> getDefaultSession().${key.methodName} (  ${key.parametersCall} );
+  }
+</#list>
+
+  public static FacadeContext getCtx() {
+    return getDefaultSession().getCtx();
+  }
+
+  public static void setDefaultSession(${model.className}Session xx) {
+    xx.setDefault(${model.className}Session.class);
+  }
+  
+  public static ${model.className}Session getDefaultSession() {
+    return (${model.className}Session)FacadeSession.getDefault(${model.className}Session.class);
+  }
+
+}
+

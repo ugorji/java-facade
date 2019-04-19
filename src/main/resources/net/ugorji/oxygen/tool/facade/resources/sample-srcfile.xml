@@ -1,0 +1,62 @@
+<application>
+  <general name="fc" classname="fc" package="" 
+           helpresource="net.ugorji.oxygen/tool/facade/resources/sample-helpfile.xml"
+           definitionresource="net.ugorji.oxygen/tool/facade/resources/sample-srcfile.xml" />
+
+  <param name="available_vars_1" value="a, b, c" />
+  <param name="available_vars_2" value="a, b, c" />
+  <param name="AVAILABLE_VARS" value="showstacktrace, failonerror, printreturnvalue" />
+  <param name="DEFAULT_SET_VARS" value="showstacktrace" />
+  <param name="DEFAULT_SEPARATOR" value="/" /><!-- should really default to , -->
+  <param name="USE_EQUAL_BEFORE_VALUE_IN_PATH" value="false" />
+  <param name="DOMAINS_WITH_NO_NEED_FOR_KEY_IN_PATH_PATTERN" value="java.*|JMImplementation" />
+  
+  <category name="misc">
+    <command name="sample" classname="net.ugorji.oxygen.tool.facade.plugins.Sample" />
+    <command name="exit" classname="net.ugorji.oxygen.tool.facade.plugins.Exit" />
+    <command name="lasterror" classname="net.ugorji.oxygen.tool.facade.plugins.LastError" />
+    <command name="lasterrorstacktrace" classname="net.ugorji.oxygen.tool.facade.plugins.LastErrorStackTrace" />
+  </category>
+  
+  <category name="help">
+    <command name="quickhelp" classname="net.ugorji.oxygen.tool.facade.plugins.QuickHelp" />
+    <command name="help" classname="net.ugorji.oxygen.tool.facade.plugins.Help" />
+    <command name="commandcategories" classname="net.ugorji.oxygen.tool.facade.plugins.CommandCategories" />
+    <command name="commands" classname="net.ugorji.oxygen.tool.facade.plugins.Commands" />
+  </category>
+
+  <category name="vars">
+    <command name="setvars" classname="net.ugorji.oxygen.tool.facade.plugins.SetVars" />
+    <command name="unsetvars" classname="net.ugorji.oxygen.tool.facade.plugins.UnsetVars" />
+    <command name="vars" classname="net.ugorji.oxygen.tool.facade.plugins.AvailableVars" />
+  </category>
+
+  <category name="trees">
+    <command name="writetree" classname="net.ugorji.oxygen.tool.facade.plugins.WriteTree" />
+    <command name="trees" classname="net.ugorji.oxygen.tool.facade.plugins.Trees" />
+    <command name="tree" classname="net.ugorji.oxygen.tool.facade.plugins.SwitchTree" />
+    <command name="ls" classname="net.ugorji.oxygen.tool.facade.plugins.Ls" />
+    <command name="cd" classname="net.ugorji.oxygen.tool.facade.plugins.Cd" />
+    <command name="pwd" classname="net.ugorji.oxygen.tool.facade.plugins.Pwd" />
+    <command name="obj" classname="net.ugorji.oxygen.tool.facade.plugins.Obj" />
+  </category>
+
+  <category name="control">
+    <command name="connect" classname="net.ugorji.oxygen.tool.facade.plugins.Connect" />
+    <command name="disconnect" classname="net.ugorji.oxygen.tool.facade.plugins.Disconnect" />
+    <command name="connections" classname="net.ugorji.oxygen.tool.facade.plugins.Connections" />
+  </category>
+  
+  <category name="mbeans">
+    <command name="mbs" classname="net.ugorji.oxygen.tool.facade.plugins.GetMBS" />
+    <command name="atts" classname="net.ugorji.oxygen.tool.facade.plugins.ListMBeanAttributes" />
+    <command name="ops" classname="net.ugorji.oxygen.tool.facade.plugins.ListMBeanOperations" />
+    <command name="invoke" classname="net.ugorji.oxygen.tool.facade.plugins.InvokeMBeanOperation" />
+    <command name="get" classname="net.ugorji.oxygen.tool.facade.plugins.GetMBeanAttribute" />
+    <command name="set" classname="net.ugorji.oxygen.tool.facade.plugins.SetMBeanAttribute" />
+  </category>
+
+  <!-- <command name="" classname="net.ugorji.oxygen.tool.facade.plugins." category="cat1" /> -->
+
+</application>
+
