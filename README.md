@@ -27,6 +27,14 @@ However, this package doesn't depend on any others.
 gradle clean build
 ```
 
+## Running
+
+For example, to run within a javascript interactive shell e.g. jjs, use:
+
+```
+jjs -cp "java-common.jar;java-facade.jar;commons-collections.jar;..."
+```
+
 ## Usage
 
 By default, this provides an interactive environment to navigate the JMX MBeans
