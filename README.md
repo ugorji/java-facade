@@ -13,18 +13,22 @@ WebLogic Real Time (CEP/Event Server).
 
 ## Dependencies
 
-This is typically used within a multi-project `gradle` build.
+This repository is part of a multi-project `gradle` build.
 
-It is used by the collab-wiki and collab-forum projects 
-as the easy format for writing content.
+It has the following dependencies:
+
+- [java-common](https://github.com/ugorji/java-common)
+
+Before building:
+
+- clone the dependencies into adjacent folders directly under same parent folder
+- download [`settings.gradle`](https://gist.githubusercontent.com/ugorji/2a338462e63680d117016793989847fa/raw/settings.gradle) into the parent folder
 
 ## Building
 
-This is typically used within a multi-project `gradle` build.
-However, this package doesn't depend on any others.
-
 ```sh
-gradle clean build
+gradle clean
+gradle build
 ```
 
 ## Running
